@@ -1,0 +1,58 @@
+[
+ {
+  "col": 255,
+  "header1": "YTD 수탁고증감",
+  "header2": 0.0,
+  "header3": 51069870.0,
+  "last_formula": "23706654960"
+ },
+ {
+  "col": 256,
+  "header1": "설정후 수탁고",
+  "header2": null,
+  "header3": null,
+  "last_formula": "50000000000"
+ },
+ {
+  "col": 257,
+  "header1": "설정후 수탁고증감",
+  "header2": null,
+  "header3": null,
+  "last_formula": "100842344640"
+ },
+ {
+  "col": 258,
+  "header1": "펀드분류",
+  "header2": "채권",
+  "header3": "채권",
+  "last_formula": "=IF(AND(LEFT([@펀드],1)=\"9\",ISNUMBER(SEARCH(\"ACE\",[@펀드명]))),\"ETF\",[@펀드유형])"
+ },
+ {
+  "col": 259,
+  "header1": "팀분류",
+  "header2": "FI운용1부",
+  "header3": "FI운용1부",
+  "last_formula": "=IF([@운용역]=\"김동주\", \"FI운용1부\",\n IF([@운용역]=\"이미연\",\n    IF([@국내외구분]=\"국내\", \"FI운용2부\", \"해외FI운용부\"),\n    [@운용팀]))"
+ },
+ {
+  "col": 260,
+  "header1": "기획실수탁고분류",
+  "header2": 207.24577276,
+  "header3": 106.33913283,
+  "last_formula": "=IF([@펀드분류]=\"ETF\",[@[순자산(후)]],[@원본액])/10^8"
+ },
+ {
+  "col": 261,
+  "header1": "기획실펀드분류",
+  "header2": "채권",
+  "header3": "채권",
+  "last_formula": "=IF([@펀드]=\"3JM54\", \"가상\", IF(AND(LEFT([@펀드],1)=\"9\", ISNUMBER(SEARCH(\"ACE\", [@펀드명]))), \"ETF\", IF(AND([@펀드유형]=\"단기금융(MMF)\", [@국내외구분]=\"해외\"), \"MMF\", IF([@펀드유형]=\"단기금융(MMF)\",\"MMF\", [@펀드유형]))))"
+ },
+ {
+  "col": 262,
+  "header1": "제외조건",
+  "header2": "",
+  "header3": "",
+  "last_formula": "=IF([@기획실펀드분류]=\"가상\",\"가상\",\"\")"
+ }
+]

@@ -1,0 +1,54 @@
+[
+ {
+  "name": "'BOS3218'!_FilterDatabase",
+  "refers_to": "='BOS3218'!$A$1:$O$567"
+ },
+ {
+  "name": "PivotTables_EoM!_FilterDatabase",
+  "refers_to": "=PivotTables_EoM!$T$219:$W$258"
+ },
+ {
+  "name": "수익자!_FilterDatabase",
+  "refers_to": "=수익자!$A$1:$E$103"
+ },
+ {
+  "name": "_xlfn._xlws.FILTER",
+  "refers_to": "=#NAME?"
+ },
+ {
+  "name": "_xlfn._xlws.SORT",
+  "refers_to": "=#NAME?"
+ },
+ {
+  "name": "_xlfn.AGGREGATE",
+  "refers_to": "=#NAME?"
+ },
+ {
+  "name": "_xlfn.IFERROR",
+  "refers_to": "=#NAME?"
+ },
+ {
+  "name": "_xlfn.RRI",
+  "refers_to": "=#NAME?"
+ },
+ {
+  "name": "_xlfn.SINGLE",
+  "refers_to": "=#NAME?"
+ },
+ {
+  "name": "_xlfn.SUMIFS",
+  "refers_to": "=#NAME?"
+ },
+ {
+  "name": "_xlfn.XLOOKUP",
+  "refers_to": "=#NAME?"
+ },
+ {
+  "name": "연도별수탁고추이!Print_Area",
+  "refers_to": "=연도별수탁고추이!$A$15:$M$45"
+ },
+ {
+  "name": "월말기준수탁고!Print_Area",
+  "refers_to": "=월말기준수탁고!$B$1:$M$84"
+ }
+]

@@ -1,0 +1,451 @@
+﻿python : C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:920: PyparsingDeprecationWarni
+ng: 'enablePackrat' deprecated - use 'enable_packrat'
+At line:1 char:333
++ ... NG='utf-8'; python -m oletools.olevba "D:\복호화\FI운용본부_수탁고양식_new.xlsb"  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\USER\A...enable_packrat':String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  ParserElement.enablePackrat()
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:957: PyparsingDeprecationWarning: 'setP
+arseAction' deprecated - use 'set_parse_action'
+  decimal_literal.setParseAction(lambda t: int(t[0]))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:961: PyparsingDeprecationWarning: 'setP
+arseAction' deprecated - use 'set_parse_action'
+  octal_literal.setParseAction(lambda t: int(t[0], base=8))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:965: PyparsingDeprecationWarning: 'setP
+arseAction' deprecated - use 'set_parse_action'
+  hex_literal.setParseAction(lambda t: int(t[0], base=16))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:977: PyparsingDeprecationWarning: 'escQ
+uote' argument is deprecated, use 'esc_quote'
+  quoted_string = QuotedString('"', escQuote='""')
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:978: PyparsingDeprecationWarning: 'setP
+arseAction' deprecated - use 'set_parse_action'
+  quoted_string.setParseAction(lambda t: str(t[0]))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1059: PyparsingDeprecationWarning: 'set
+ParseAction' deprecated - use 'set_parse_action'
+  vba_chr.setParseAction(vba_chr_tostr)
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1067: PyparsingDeprecationWarning: 'set
+ParseAction' deprecated - use 'set_parse_action'
+  vba_asc.setParseAction(lambda t: ord(t[0]))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1075: PyparsingDeprecationWarning: 'set
+ParseAction' deprecated - use 'set_parse_action'
+  vba_val.setParseAction(lambda t: int(t[0].strip()))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1082: PyparsingDeprecationWarning: 'set
+ParseAction' deprecated - use 'set_parse_action'
+  strReverse.setParseAction(lambda t: VbaExpressionString(str(t[0])[::-1]))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1089: PyparsingDeprecationWarning: 'set
+ParseAction' deprecated - use 'set_parse_action'
+  environ.setParseAction(lambda t: VbaExpressionString('%%%s%%' % t[0]))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1099: PyparsingDeprecationWarning: 'ini
+tChars' argument is deprecated, use 'init_chars'
+  latin_identifier = Word(initChars=alphas, bodyChars=alphanums + '_')
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1099: PyparsingDeprecationWarning: 'bod
+yChars' argument is deprecated, use 'body_chars'
+  latin_identifier = Word(initChars=alphas, bodyChars=alphanums + '_')
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1108: PyparsingDeprecationWarning: 'set
+ParseAction' deprecated - use 'set_parse_action'
+  quoted_hex_string.setParseAction(lambda t: str(t[0]))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1112: PyparsingDeprecationWarning: 'set
+ParseAction' deprecated - use 'set_parse_action'
+  hex_function_call.setParseAction(lambda t: VbaExpressionString(binascii.a2b_hex(t.hex_string)))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1122: PyparsingDeprecationWarning: 'set
+ParseAction' deprecated - use 'set_parse_action'
+  quoted_base64_string.setParseAction(lambda t: str(t[0]))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1126: PyparsingDeprecationWarning: 'set
+ParseAction' deprecated - use 'set_parse_action'
+  base64_function_call.setParseAction(lambda t: VbaExpressionString(binascii.a2b_base64(t.base64_string)))
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1143: PyparsingDeprecationWarning: 'inf
+ixNotation' deprecated - use 'infix_notation'
+  vba_expr_str <<= infixNotation(vba_expr_str_item,
+C:\Users\USER\AppData\Roaming\Python\Python314\site-packages\oletools\olevba.py:1198: PyparsingDeprecationWarning: 'inf
+ixNotation' deprecated - use 'infix_notation'
+  vba_expr_int <<= infixNotation(vba_expr_int_item,
+olevba 0.60.2 on Python 3.14.0 - http://decalage.info/python/oletools
+===============================================================================
+FILE: D:\복호화\FI운용본부_수탁고양식_new.xlsb
+Type: OpenXML
+WARNING  For now, VBA stomping cannot be detected for files in memory
+-------------------------------------------------------------------------------
+VBA MACRO 현재_통합_문서.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/현재_통합_문서'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet11.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet11'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Module3.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Module3'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Module2.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Module2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet13.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet13'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet2.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet5.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet5'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet10.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet10'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet7.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet7'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet8.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet8'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Module1.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Module1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+Sub BOS3218Update()
+    Dim ws As Worksheet
+    Set ws = ThisWorkbook.Sheets("BOS3218")
+    
+    Dim lastRow As Long
+    Dim inputRow As Variant
+    
+    ' 몇 행까지 작업할지 사용자로부터 입력받습니다.
+    inputRow = InputBox("몇 행까지 작업을 수행하시겠습니까?", "행 입력", ws.Cells(ws.Rows.Count, "B").End(xlUp).Row)
+    
+    ' 입력값이 숫자인지 확인합니다.
+    If IsNumeric(inputRow) Then
+        lastRow = CLng(inputRow)
+    Else
+        MsgBox "유효한 숫자를 입력해주세요.", vbExclamation
+        Exit Sub
+    End If
+    
+    Dim cols As Variant
+    cols = Array("B", "F")  ' 작업할 열 목록
+    
+    Dim col As Variant
+    For Each col In cols
+        Dim dataRange As Range
+        Set dataRange = ws.Range(col & "2:" & col & lastRow)
+        
+        Dim data As Variant
+        data = dataRange.Value
+        
+        Dim i As Long
+        Dim lastValue As Variant
+        lastValue = ws.Cells(2, col).Value  ' 첫 번째 값으로 초기화
+        
+        For i = 1 To UBound(data, 1)
+            If IsEmpty(data(i, 1)) Or IsNull(data(i, 1)) Then
+                data(i, 1) = lastValue
+            Else
+                lastValue = data(i, 1)
+            End If
+        Next i
+        
+        dataRange.Value = data  ' 변경된 데이터를 시트에 반영
+    Next col
+    
+    MsgBox "빈 셀 채우기가 완료되었습니다.", vbInformation
+    
+End Sub
+
+
+Sub 수탁고시트작성()
+    '
+    ' 월말기준수탁고 데이터 복사 매크로
+    ' PivotTables_EoM 시트에서 월말기준수탁고 시트로 데이터를 값붙여넣기
+    '
+    
+    Dim wsSource As Worksheet
+    Dim wsTarget As Worksheet
+    
+    ' 에러 처리
+    On Error GoTo ErrorHandler
+    
+    ' 워크시트 설정
+    Set wsSource = ThisWorkbook.Worksheets("PivotTables_EoM")
+    Set wsTarget = ThisWorkbook.Worksheets("월말기준수탁고")
+    
+    ' 화면 업데이트 중지 (성능 향상)
+    Application.ScreenUpdating = False
+    Application.Calculation = xlCalculationManual
+    
+    ' 1. B31:L49 → C7:M25 복사
+    wsSource.Range("B31:L49").Copy
+    wsTarget.Range("C7").PasteSpecial Paste:=xlPasteValues
+    
+    ' 2. B62:C71 → C30:D39 복사
+    wsSource.Range("B62:C71").Copy
+    wsTarget.Range("C30").PasteSpecial Paste:=xlPasteValues
+    
+    ' 3. E62:F71 → F30:G39 복사
+    wsSource.Range("E62:F71").Copy
+    wsTarget.Range("F30").PasteSpecial Paste:=xlPasteValues
+    
+    ' 4. H62:I71 → I30:J39 복사
+    wsSource.Range("H62:I71").Copy
+    wsTarget.Range("I30").PasteSpecial Paste:=xlPasteValues
+    
+    ' 5. A77:J91 → B45:K58 복사
+    wsSource.Range("A77:J91").Copy
+    wsTarget.Range("B45").PasteSpecial Paste:=xlPasteValues
+    
+    ' 클립보드 정리
+    Application.CutCopyMode = False
+    
+    ' 화면 업데이트 재개
+    Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
+    
+    MsgBox "데이터 복사가 완료되었습니다.", vbInformation, "작업 완료"
+    
+    Exit Sub
+    
+ErrorHandler:
+    ' 에러 발생 시 설정 복원
+    Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
+    Application.CutCopyMode = False
+    
+    MsgBox "오류가 발생했습니다: " & Err.Description, vbCritical, "오류"
+End Sub
+
+Sub 수탁고파일저장()
+    
+    Dim wsSource As Worksheet
+    Dim wbNew As Workbook
+    Dim wsNew As Worksheet
+    Dim dateValue As String
+    Dim fileName As String
+    Dim filePath As String
+    Dim saveFolder As String
+    
+    ' 에러 처리
+    On Error GoTo ErrorHandler
+    
+    ' 원본 시트 설정
+    Set wsSource = ThisWorkbook.Worksheets("월말기준수탁고")
+    
+    ' L3 셀에서 날짜 가져오기 및 형식 변환 (YYYY-MM-DD → YYYYMMDD)
+    dateValue = wsSource.Range("L3").Value
+    If IsDate(dateValue) Then
+        dateValue = Format(CDate(dateValue), "YYYYMMDD")
+    Else
+        ' 날짜가 아닌 경우 텍스트에서 하이픈 제거
+        dateValue = Replace(dateValue, "-", "")
+    End If
+    
+    ' 파일명 및 경로 설정
+    fileName = "FI운용본부수탁고_" & dateValue & ".xlsx"
+    saveFolder = "K:\부서 공유\FI운용본부\본부 수탁고 현황\"
+    filePath = saveFolder & fileName
+    
+    ' 화면 업데이트 중지
+    Application.ScreenUpdating = False
+    Application.DisplayAlerts = False
+    
+    ' 시트를 새 통합 문서로 복사 (이동/복사 방식과 동일)
+    wsSource.Copy
+    
+    ' 새로 생성된 워크북 참조
+    Set wbNew = ActiveWorkbook
+    Set wsNew = wbNew.Worksheets(1)
+    
+    ' 새 시트의 모든 셀을 선택하고 복사
+    wsNew.Cells.Select
+    wsNew.Cells.Copy
+    
+    ' 같은 위치에 값만 붙여넣기 (수식을 값으로 변환)
+    wsNew.Range("A1").PasteSpecial Paste:=xlPasteValues
+    
+    ' 클립보드 정리 및 셀 선택 해제
+    Application.CutCopyMode = False
+    wsNew.Range("A1").Select
+    
+    ' 저장 폴더가 존재하는지 확인
+    If Dir(saveFolder, vbDirectory) = "" Then
+        MsgBox "저장 경로가 존재하지 않습니다: " & saveFolder, vbCritical, "경로 오류"
+        GoTo CleanUp
+    End If
+    
+    ' 파일이 이미 존재하는 경우 확인
+    If Dir(filePath) <> "" Then
+        If MsgBox("파일이 이미 존재합니다. 덮어쓰시겠습니까?" & vbCrLf & filePath, _
+                  vbYesNo + vbQuestion, "파일 덮어쓰기") = vbNo Then
+            GoTo CleanUp
+        End If
+    End If
+    
+    ' 파일 저장
+    wbNew.SaveAs fileName:=filePath, FileFormat:=xlOpenXMLWorkbook
+    
+    ' 새 워크북 닫기
+    wbNew.Close SaveChanges:=False
+    
+    ' 설정 복원
+    Application.ScreenUpdating = True
+    Application.DisplayAlerts = True
+    
+    MsgBox "파일이 성공적으로 저장되었습니다:" & vbCrLf & filePath, vbInformation, "저장 완료"
+    
+    Exit Sub
+    
+CleanUp:
+    ' 새 워크북이 열려있다면 닫기
+    If Not wbNew Is Nothing Then
+        wbNew.Close SaveChanges:=False
+    End If
+    Application.ScreenUpdating = True
+    Application.DisplayAlerts = True
+    Application.CutCopyMode = False
+    Exit Sub
+    
+ErrorHandler:
+    ' 에러 발생 시 정리
+    If Not wbNew Is Nothing Then
+        wbNew.Close SaveChanges:=False
+    End If
+    Application.ScreenUpdating = True
+    Application.DisplayAlerts = True
+    Application.CutCopyMode = False
+    
+    MsgBox "오류가 발생했습니다: " & Err.Description & vbCrLf & _
+           "오류 번호: " & Err.Number, vbCritical, "오류"
+End Sub
+
+Sub 피벗테이블양식출력()
+    Dim ws As Worksheet
+    Dim newDate As String
+    Dim pf As PivotField
+    Dim pi As PivotItem
+    Dim msg As String
+    
+    Set ws = Worksheets("PivotTables_EoM")
+    Set pf = ws.PivotTables("팀별순자산").PivotFields("처리일")
+    
+    ' B2셀 값 확인
+    newDate = ws.Range("B2").Text
+    msg = "B2셀 값: " & newDate & vbCrLf & vbCrLf & "피벗테이블 항목들:" & vbCrLf
+    
+    ' 피벗테이블의 모든 항목 출력
+    For Each pi In pf.PivotItems
+        msg = msg & pi.Name & vbCrLf
+    Next pi
+    
+    MsgBox msg
+End Sub
+
+Sub 수탁고업데이트()
+    Dim ws As Worksheet
+    Dim oldDate As String
+    Dim newDate As String
+    Dim pf As PivotField
+    Dim pivotNames As Variant
+    Dim i As Integer
+    
+    Set ws = Worksheets("PivotTables_EoM")
+    
+    oldDate = ws.Range("A2").Text
+    newDate = ws.Range("B2").Text
+    
+    ' 업데이트할 피벗테이블 이름들
+    pivotNames = Array("팀별수탁고", "팀별순자산", "MOS세부분류", "수익자1", "수익자2", "팀1", "팀2", "팀3")
+    
+    ' 각 피벗테이블에 동일한 작업 수행
+    For i = 0 To UBound(pivotNames)
+        Set pf = ws.PivotTables(pivotNames(i)).PivotFields("처리일")
+        
+        ' 에러 방지: oldDate가 보이는 상태일 때만 숨기기
+        On Error Resume Next
+        If pf.PivotItems(oldDate).Visible Then
+            pf.PivotItems(oldDate).Visible = False
+        End If
+        On Error GoTo 0
+        
+        pf.PivotItems(newDate).Visible = True
+    Next i
+End Sub
+
+
+Sub CompactTable()
+    Dim ws As Worksheet
+    Set ws = ThisWorkbook.Sheets("월간경영전략회의")
+    
+    ' 먼저 모든 대상 행 복원
+    ws.Rows("7:42").Hidden = False
+    
+    ' O열(국내 펀드명)과 R열(해외 펀드명) 모두 빈칸인 행 숨기기
+    Dim r As Long
+    For r = 42 To 7 Step -1
+        If ws.Range("O" & r).Value = "" And ws.Range("R" & r).Value = "" Then
+            ws.Rows(r).Hidden = True
+        End If
+    Next r
+End Sub
+
+Sub RestoreTable()
+    ThisWorkbook.Sheets("월간경영전략회의").Rows("7:42").Hidden = False
+End Sub
+
+-------------------------------------------------------------------------------
+VBA MACRO Sheet9.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet9'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet3.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet3'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Module4.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Module4'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet12.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet12'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet4.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet4'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet1.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet6.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet6'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Sheet14.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet14'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+

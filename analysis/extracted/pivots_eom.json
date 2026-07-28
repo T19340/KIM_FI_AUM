@@ -1,0 +1,905 @@
+[
+ {
+  "name": "피벗 테이블10",
+  "location": "$H$128:$I$136",
+  "source": "표_MOS2101",
+  "row_fields": [
+   {
+    "name": "수익자3",
+    "source_name": "수익자3",
+    "visible_items": [
+     "부산은행"
+    ]
+   }
+  ],
+  "column_fields": [
+   {
+    "name": "처리일",
+    "source_name": "처리일",
+    "visible_items": [
+     "12/31/2024",
+     "2/25/2025",
+     "4/7/2026"
+    ]
+   }
+  ],
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "source_name": "운용부서",
+    "current_page": "FI운용본부",
+    "visible_items": [
+     "FI운용본부"
+    ]
+   },
+   {
+    "name": "모자구분",
+    "source_name": "모자구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "source_name": "종류형구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "제외조건",
+    "source_name": "제외조건",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   }
+  ],
+  "data_fields": [
+   {
+    "name": "합계 : 수익자수탁고",
+    "source_name": "수익자수탁고",
+    "function": "Sum",
+    "number_format": "G/표준"
+   }
+  ],
+  "calculated_fields": [
+   {
+    "name": "YTD 증감",
+    "formula": "=IF(펀드 =\"05A02\",기획실수탁고분류,0)"
+   }
+  ]
+ },
+ {
+  "name": "MOS세부분류",
+  "location": "$A$54:$J$72",
+  "source": "표_MOS2101",
+  "row_fields": [
+   {
+    "name": "기획실펀드분류",
+    "source_name": "기획실펀드분류",
+    "visible_items": [
+     "채권",
+     "채권파생",
+     "채권혼합",
+     "변액보험",
+     "재간접",
+     "주식혼합",
+     "ETF",
+     "MMF",
+     "가상",
+     "재간접파생",
+     "혼합자산"
+    ]
+   }
+  ],
+  "column_fields": [
+   {
+    "name": "처리일",
+    "source_name": "처리일",
+    "visible_items": [
+     "12/31/2025",
+     "7/14/2026"
+    ]
+   },
+   {
+    "name": "팀분류",
+    "source_name": "팀분류",
+    "visible_items": [
+     "0",
+     "ESG운용부",
+     "ETF운용부",
+     "FI운용1부",
+     "FI운용2부",
+     "글로벌퀀트운용부",
+     "주식운용1부",
+     "주식운용2부",
+     "주식운용3부",
+     "해외FI운용부",
+     "해외주식운용부",
+     "GIS운용본부",
+     "멀티에셋운용부",
+     "글로벌주식운용담당",
+     "4.31",
+     "4.35",
+     "4.08",
+     "3.92",
+     "4.36",
+     "4.09",
+     "4.41",
+     "4.4",
+     "2.75",
+     "4.64",
+     "4.67",
+     "4.32",
+     "0.05",
+     "5.3",
+     "3.62",
+     "2.91",
+     "2.21",
+     "0.86",
+     "3.02",
+     "4.8",
+     "4.7",
+     "4.24",
+     "2.1",
+     "3.72",
+     "4.2",
+     "5.29",
+     "2.06",
+     "3.88",
+     "4.39",
+     "2.45",
+     "5.03",
+     "4.9",
+     "4.42",
+     "4.29",
+     "4.17",
+     "3.7",
+     "솔루션전략부",
+     "해외비즈니스담당"
+    ]
+   }
+  ],
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "source_name": "운용부서",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "모자구분",
+    "source_name": "모자구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "source_name": "종류형구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "제외조건",
+    "source_name": "제외조건",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   }
+  ],
+  "data_fields": [
+   {
+    "name": "합계 : 기획실수탁고분류",
+    "source_name": "기획실수탁고분류",
+    "function": "Sum",
+    "number_format": "#,##0_);[빨강](#,##0)"
+   }
+  ],
+  "calculated_fields": [
+   {
+    "name": "YTD 증감",
+    "formula": "=IF(펀드 =\"05A02\",기획실수탁고분류,0)"
+   }
+  ]
+ },
+ {
+  "name": "팀별수탁고",
+  "location": "$A$6:$F$27",
+  "source": "표_MOS2101",
+  "row_fields": [
+   {
+    "name": "팀분류",
+    "source_name": "팀분류",
+    "visible_items": [
+     "0",
+     "ESG운용부",
+     "ETF운용부",
+     "FI운용1부",
+     "FI운용2부",
+     "글로벌퀀트운용부",
+     "주식운용1부",
+     "주식운용2부",
+     "주식운용3부",
+     "해외FI운용부",
+     "해외주식운용부",
+     "GIS운용본부",
+     "멀티에셋운용부",
+     "글로벌주식운용담당",
+     "4.31",
+     "4.35",
+     "4.08",
+     "3.92",
+     "4.36",
+     "4.09",
+     "4.41",
+     "4.4",
+     "2.75",
+     "4.64",
+     "4.67",
+     "4.32",
+     "0.05",
+     "5.3",
+     "3.62",
+     "2.91",
+     "2.21",
+     "0.86",
+     "3.02",
+     "4.8",
+     "4.7",
+     "4.24",
+     "2.1",
+     "3.72",
+     "4.2",
+     "5.29",
+     "2.06",
+     "3.88",
+     "4.39",
+     "2.45",
+     "5.03",
+     "4.9",
+     "4.42",
+     "4.29",
+     "4.17",
+     "3.7",
+     "솔루션전략부",
+     "해외비즈니스담당"
+    ]
+   },
+   {
+    "name": "펀드일임구분",
+    "source_name": "펀드일임구분",
+    "visible_items": [
+     "공모펀드",
+     "사모펀드",
+     "펀드",
+     "일임",
+     "MMF",
+     "ETF",
+     "FALSE",
+     "(blank)"
+    ]
+   }
+  ],
+  "column_fields": [
+   {
+    "name": "처리일",
+    "source_name": "처리일",
+    "visible_items": [
+     "12/31/2024",
+     "12/31/2025",
+     "5/31/2026",
+     "6/30/2026",
+     "7/14/2026"
+    ]
+   }
+  ],
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "source_name": "운용부서",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "모자구분",
+    "source_name": "모자구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "source_name": "종류형구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "제외조건",
+    "source_name": "제외조건",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   }
+  ],
+  "data_fields": [
+   {
+    "name": "합계 : 기획실수탁고분류",
+    "source_name": "기획실수탁고분류",
+    "function": "Sum",
+    "number_format": "#,##0_);[빨강](#,##0)"
+   }
+  ],
+  "calculated_fields": [
+   {
+    "name": "YTD 증감",
+    "formula": "=IF(펀드 =\"05A02\",기획실수탁고분류,0)"
+   }
+  ]
+ },
+ {
+  "name": "수익자1",
+  "location": "$A$95:$C$149",
+  "source": "표_MOS2101",
+  "row_fields": [
+   {
+    "name": "수익자1",
+    "source_name": "수익자1",
+    "visible_items": [
+     "DB생명",
+     "DB손해보험",
+     "KB라이프",
+     "KB손해보험",
+     "NH성과보상기금",
+     "SC제일은행",
+     "건강보험",
+     "건설근로자공제회",
+     "공무원연금",
+     "교보생명",
+     "국민연금",
+     "국토부(NH)",
+     "국토부(미래)",
+     "기업은행",
+     "노동부(고용보험)",
+     "노동부(산재)",
+     "동양생명",
+     "라이나생명",
+     "메리츠증권",
+     "방폐기금(신한)",
+     "삼성생명",
+     "삼성화재",
+     "선진운수DB적립금",
+     "신한라이프",
+     "신한은행",
+     "신협중앙회",
+     "연기금풀(미래)",
+     "연기금풀(삼성)",
+     "우정사업본부",
+     "중퇴기금(미래)",
+     "중퇴기금(삼성)",
+     "채권시장안정펀드",
+     "카카오뱅크",
+     "키움증권",
+     "푸본현대생명",
+     "한양대학교",
+     "한화생명",
+     "현대카드",
+     "현대캐피탈",
+     "현대커머셜",
+     "국민은행",
+     "KDB생명",
+     "ABL생명",
+     "한국투자증권",
+     "중소기업중앙회",
+     "부산은행",
+     "NH농협은행",
+     "예금보험기금",
+     "스마일게이트",
+     "아이엠뱅크",
+     "한투밸류자산운용",
+     "산림조합중앙회",
+     "IBK연금보험"
+    ]
+   }
+  ],
+  "column_fields": [
+   {
+    "name": "처리일",
+    "source_name": "처리일",
+    "visible_items": [
+     "12/31/2025",
+     "7/14/2026"
+    ]
+   }
+  ],
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "source_name": "운용부서",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "모자구분",
+    "source_name": "모자구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "source_name": "종류형구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "제외조건",
+    "source_name": "제외조건",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   }
+  ],
+  "data_fields": [
+   {
+    "name": "합계 : 수익자수탁고",
+    "source_name": "수익자수탁고",
+    "function": "Sum",
+    "number_format": "G/표준"
+   }
+  ],
+  "calculated_fields": [
+   {
+    "name": "YTD 증감",
+    "formula": "=IF(펀드 =\"05A02\",기획실수탁고분류,0)"
+   }
+  ]
+ },
+ {
+  "name": "수익자2",
+  "location": "$H$95:$J$109",
+  "source": "표_MOS2101",
+  "row_fields": [
+   {
+    "name": "수익자2",
+    "source_name": "수익자2",
+    "visible_items": [
+     "NH농협은행",
+     "경남은행",
+     "우리은행",
+     "하나은행",
+     "하나증권",
+     "한국밸류자산운용",
+     "광주은행",
+     "부산은행",
+     "카카오뱅크"
+    ]
+   }
+  ],
+  "column_fields": [
+   {
+    "name": "처리일",
+    "source_name": "처리일",
+    "visible_items": [
+     "12/31/2025",
+     "7/14/2026"
+    ]
+   }
+  ],
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "source_name": "운용부서",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "모자구분",
+    "source_name": "모자구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "source_name": "종류형구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "제외조건",
+    "source_name": "제외조건",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   }
+  ],
+  "data_fields": [
+   {
+    "name": "합계 : 수익자수탁고",
+    "source_name": "수익자수탁고",
+    "function": "Sum",
+    "number_format": "G/표준"
+   }
+  ],
+  "calculated_fields": [
+   {
+    "name": "YTD 증감",
+    "formula": "=IF(펀드 =\"05A02\",기획실수탁고분류,0)"
+   }
+  ]
+ },
+ {
+  "name": "팀1",
+  "location": "$T$5:$V$97",
+  "source": "표_MOS2101",
+  "row_fields": [
+   {
+    "name": "최종모펀드명",
+    "source_name": "최종모펀드명",
+    "visible_items_count": 279
+   }
+  ],
+  "column_fields": [
+   {
+    "name": "처리일",
+    "source_name": "처리일",
+    "visible_items": [
+     "12/31/2025",
+     "7/14/2026"
+    ]
+   }
+  ],
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "source_name": "운용부서",
+    "current_page": "FI운용본부",
+    "visible_items": [
+     "FI운용본부"
+    ]
+   },
+   {
+    "name": "팀분류",
+    "source_name": "팀분류",
+    "current_page": "FI운용1부",
+    "visible_items": [
+     "FI운용1부"
+    ]
+   },
+   {
+    "name": "제외조건",
+    "source_name": "제외조건",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "최종모펀드유무",
+    "source_name": "최종모펀드유무",
+    "current_page": "O",
+    "visible_items": [
+     "O"
+    ]
+   }
+  ],
+  "data_fields": [
+   {
+    "name": "합계 : 기획실수탁고분류",
+    "source_name": "기획실수탁고분류",
+    "function": "Sum",
+    "number_format": "G/표준"
+   }
+  ],
+  "calculated_fields": [
+   {
+    "name": "YTD 증감",
+    "formula": "=IF(펀드 =\"05A02\",기획실수탁고분류,0)"
+   }
+  ]
+ },
+ {
+  "name": "팀3",
+  "location": "$AD$5:$AF$54",
+  "source": "표_MOS2101",
+  "row_fields": [
+   {
+    "name": "최종모펀드명",
+    "source_name": "최종모펀드명",
+    "visible_items_count": 279
+   }
+  ],
+  "column_fields": [
+   {
+    "name": "처리일",
+    "source_name": "처리일",
+    "visible_items": [
+     "12/31/2025",
+     "7/14/2026"
+    ]
+   }
+  ],
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "source_name": "운용부서",
+    "current_page": "FI운용본부",
+    "visible_items": [
+     "FI운용본부"
+    ]
+   },
+   {
+    "name": "팀분류",
+    "source_name": "팀분류",
+    "current_page": "해외FI운용부",
+    "visible_items": [
+     "해외FI운용부"
+    ]
+   },
+   {
+    "name": "제외조건",
+    "source_name": "제외조건",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "최종모펀드유무",
+    "source_name": "최종모펀드유무",
+    "current_page": "O",
+    "visible_items": [
+     "O"
+    ]
+   }
+  ],
+  "data_fields": [
+   {
+    "name": "합계 : 기획실수탁고분류",
+    "source_name": "기획실수탁고분류",
+    "function": "Sum",
+    "number_format": "G/표준"
+   }
+  ],
+  "calculated_fields": [
+   {
+    "name": "YTD 증감",
+    "formula": "=IF(펀드 =\"05A02\",기획실수탁고분류,0)"
+   }
+  ]
+ },
+ {
+  "name": "팀2",
+  "location": "$Y$5:$AA$88",
+  "source": "표_MOS2101",
+  "row_fields": [
+   {
+    "name": "최종모펀드명",
+    "source_name": "최종모펀드명",
+    "visible_items_count": 279
+   }
+  ],
+  "column_fields": [
+   {
+    "name": "처리일",
+    "source_name": "처리일",
+    "visible_items": [
+     "12/31/2025",
+     "7/14/2026"
+    ]
+   }
+  ],
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "source_name": "운용부서",
+    "current_page": "FI운용본부",
+    "visible_items": [
+     "FI운용본부"
+    ]
+   },
+   {
+    "name": "팀분류",
+    "source_name": "팀분류",
+    "current_page": "FI운용2부",
+    "visible_items": [
+     "FI운용2부"
+    ]
+   },
+   {
+    "name": "제외조건",
+    "source_name": "제외조건",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "최종모펀드유무",
+    "source_name": "최종모펀드유무",
+    "current_page": "O",
+    "visible_items": [
+     "O"
+    ]
+   }
+  ],
+  "data_fields": [
+   {
+    "name": "합계 : 기획실수탁고분류",
+    "source_name": "기획실수탁고분류",
+    "function": "Sum",
+    "number_format": "G/표준"
+   }
+  ],
+  "calculated_fields": [
+   {
+    "name": "YTD 증감",
+    "formula": "=IF(펀드 =\"05A02\",기획실수탁고분류,0)"
+   }
+  ]
+ },
+ {
+  "name": "팀별순자산",
+  "location": "$H$6:$I$27",
+  "source": "표_MOS2101",
+  "row_fields": [
+   {
+    "name": "팀분류",
+    "source_name": "팀분류",
+    "visible_items": [
+     "0",
+     "ESG운용부",
+     "ETF운용부",
+     "FI운용1부",
+     "FI운용2부",
+     "글로벌퀀트운용부",
+     "주식운용1부",
+     "주식운용2부",
+     "주식운용3부",
+     "해외FI운용부",
+     "해외주식운용부",
+     "GIS운용본부",
+     "멀티에셋운용부",
+     "글로벌주식운용담당",
+     "4.31",
+     "4.35",
+     "4.08",
+     "3.92",
+     "4.36",
+     "4.09",
+     "4.41",
+     "4.4",
+     "2.75",
+     "4.64",
+     "4.67",
+     "4.32",
+     "0.05",
+     "5.3",
+     "3.62",
+     "2.91",
+     "2.21",
+     "0.86",
+     "3.02",
+     "4.8",
+     "4.7",
+     "4.24",
+     "2.1",
+     "3.72",
+     "4.2",
+     "5.29",
+     "2.06",
+     "3.88",
+     "4.39",
+     "2.45",
+     "5.03",
+     "4.9",
+     "4.42",
+     "4.29",
+     "4.17",
+     "3.7",
+     "솔루션전략부",
+     "해외비즈니스담당"
+    ]
+   },
+   {
+    "name": "펀드일임구분",
+    "source_name": "펀드일임구분",
+    "visible_items": [
+     "공모펀드",
+     "사모펀드",
+     "펀드",
+     "일임",
+     "MMF",
+     "ETF",
+     "FALSE",
+     "(blank)"
+    ]
+   }
+  ],
+  "column_fields": [
+   {
+    "name": "처리일",
+    "source_name": "처리일",
+    "visible_items": [
+     "7/14/2026"
+    ]
+   }
+  ],
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "source_name": "운용부서",
+    "current_page": "FI운용본부",
+    "visible_items": [
+     "FI운용본부"
+    ]
+   },
+   {
+    "name": "모자구분",
+    "source_name": "모자구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "source_name": "종류형구분",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   },
+   {
+    "name": "제외조건",
+    "source_name": "제외조건",
+    "current_page": "(All)",
+    "visible_items": [
+     "(All)"
+    ]
+   }
+  ],
+  "data_fields": [
+   {
+    "name": "합계 : 순자산(후)",
+    "source_name": "순자산(후)",
+    "function": "Sum",
+    "number_format": "G/표준"
+   }
+  ],
+  "calculated_fields": [
+   {
+    "name": "YTD 증감",
+    "formula": "=IF(펀드 =\"05A02\",기획실수탁고분류,0)"
+   }
+  ]
+ }
+]

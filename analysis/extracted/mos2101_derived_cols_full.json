@@ -1,0 +1,104 @@
+[
+ {
+  "col": 258,
+  "header": "펀드분류",
+  "formula_last": "=IF(AND(LEFT([@펀드],1)=\"9\",ISNUMBER(SEARCH(\"ACE\",[@펀드명]))),\"ETF\",[@펀드유형])",
+  "formula_r1c1": "=IF(AND(LEFT([@펀드],1)=\"9\",ISNUMBER(SEARCH(\"ACE\",[@펀드명]))),\"ETF\",[@펀드유형])"
+ },
+ {
+  "col": 259,
+  "header": "팀분류",
+  "formula_last": "=IF([@운용역]=\"김동주\", \"FI운용1부\",\n IF([@운용역]=\"이미연\",\n    IF([@국내외구분]=\"국내\", \"FI운용2부\", \"해외FI운용부\"),\n    [@운용팀]))",
+  "formula_r1c1": "=IF([@운용역]=\"김동주\", \"FI운용1부\",\n IF([@운용역]=\"이미연\",\n    IF([@국내외구분]=\"국내\", \"FI운용2부\", \"해외FI운용부\"),\n    [@운용팀]))"
+ },
+ {
+  "col": 260,
+  "header": "기획실수탁고분류",
+  "formula_last": "=IF([@펀드분류]=\"ETF\",[@[순자산(후)]],[@원본액])/10^8",
+  "formula_r1c1": "=IF([@펀드분류]=\"ETF\",[@[순자산(후)]],[@원본액])/10^8"
+ },
+ {
+  "col": 261,
+  "header": "기획실펀드분류",
+  "formula_last": "=IF([@펀드]=\"3JM54\", \"가상\", IF(AND(LEFT([@펀드],1)=\"9\", ISNUMBER(SEARCH(\"ACE\", [@펀드명]))), \"ETF\", IF(AND([@펀드유형]=\"단기금융(MMF)\", [@국내외구분]=\"해외\"), \"MMF\", IF([@펀드유형]=\"단기금융(MMF)\",\"MMF\", [@펀드유형]))))",
+  "formula_r1c1": "=IF([@펀드]=\"3JM54\", \"가상\", IF(AND(LEFT([@펀드],1)=\"9\", ISNUMBER(SEARCH(\"ACE\", [@펀드명]))), \"ETF\", IF(AND([@펀드유형]=\"단기금융(MMF)\", [@국내외구분]=\"해외\"), \"MMF\", IF([@펀드유형]=\"단기금융(MMF)\",\"MMF\", [@펀드유형]))))"
+ },
+ {
+  "col": 262,
+  "header": "제외조건",
+  "formula_last": "=IF([@기획실펀드분류]=\"가상\",\"가상\",\"\")",
+  "formula_r1c1": "=IF([@기획실펀드분류]=\"가상\",\"가상\",\"\")"
+ },
+ {
+  "col": 263,
+  "header": "펀드일임구분",
+  "formula_last": "=IF([@기획실펀드분류]=\"ETF\",\"ETF\",IF([@기획실펀드분류]=\"MMF\",\"MMF\",(IF((AND([@펀드구분]=\"투자신탁\",[@공모사모구분]=\"공모\")),\"펀드\",IF((AND([@펀드구분]=\"투자신탁\",[@공모사모구분]=\"사모\")),\"펀드\",IF([@펀드구분]=\"투자일임\",\"일임\"))))))",
+  "formula_r1c1": "=IF([@기획실펀드분류]=\"ETF\",\"ETF\",IF([@기획실펀드분류]=\"MMF\",\"MMF\",(IF((AND([@펀드구분]=\"투자신탁\",[@공모사모구분]=\"공모\")),\"펀드\",IF((AND([@펀드구분]=\"투자신탁\",[@공모사모구분]=\"사모\")),\"펀드\",IF([@펀드구분]=\"투자일임\",\"일임\"))))))"
+ },
+ {
+  "col": 264,
+  "header": "펀드약칭",
+  "formula_last": "=TEXT([@펀드],\"00000\")",
+  "formula_r1c1": "=TEXT([@펀드],\"00000\")"
+ },
+ {
+  "col": 265,
+  "header": "종류형구분2",
+  "formula_last": "=IF(ISNUMBER(MATCH(JD42258, 'BOS3218'!L:L, 0)), \"종류형자펀드\", IF(ISNUMBER(MATCH(JD42258, 'BOS3218'!K:K, 0)), \"종류형모펀드\", \"최종모펀드\"))",
+  "formula_r1c1": "=IF(ISNUMBER(MATCH(RC[-1], BOS3218!C[-253], 0)), \"종류형자펀드\", IF(ISNUMBER(MATCH(RC[-1], BOS3218!C[-254], 0)), \"종류형모펀드\", \"최종모펀드\"))"
+ },
+ {
+  "col": 266,
+  "header": "최종모펀드코드",
+  "formula_last": "=IF(JE42258=\"최종모펀드\", JD42258,\n IF(JE42258=\"종류형모펀드\", IF(ISNUMBER(MATCH(JD42258, 'BOS3218'!K:K, 0)),\n   IF(INDEX('BOS3218'!M:M, MATCH(JD42258, 'BOS3218'!K:K, 0))=\"X\", INDEX('BOS3218'!J:J, MATCH(JD42258, 'BOS3218'!K:K, 0)), JD42258), \"\"),\n IF(JE42258=\"종류형자펀드\", IF(ISNUMBER(MATCH(JD42258, 'BOS3218'!L:L, 0)),\n   IF(AND(INDEX('BOS3218'!M:M, MATCH(JD42258, 'BOS3218'!L:L, 0))=\"O\", INDEX('BOS3218'!N:N, MATCH(JD42258, 'BOS3218'!L:L, 0))=\"O\"), JD42258,\n   IF(INDEX('BOS3218'!M:M, MATCH(JD42258, 'BOS3218'!L:L, 0))=\"O\", INDEX('BOS3218'!K:K, MATCH(JD42258, 'BOS3218'!L:L, 0)),\n   IF(AND(INDEX('BOS3218'!M:M, MATCH(JD42258, 'BOS3218'!L:L, 0))=\"X\", INDEX('BOS3218'!N:N, MATCH(JD42258, 'BOS3218'!L:L, 0))=\"X\", INDEX('BOS3218'!O:O, MATCH(JD42258, 'BOS3218'!L:L, 0))=\"X\"), INDEX('BOS3218'!J:J, MATCH(JD42258, 'BOS3218'!L:L, 0)), \"\"))), \"\")))\n\n)",
+  "formula_r1c1": "=IF(RC[-1]=\"최종모펀드\", RC[-2],\n IF(RC[-1]=\"종류형모펀드\", IF(ISNUMBER(MATCH(RC[-2], BOS3218!C[-255], 0)),\n   IF(INDEX(BOS3218!C[-253], MATCH(RC[-2], BOS3218!C[-255], 0))=\"X\", INDEX(BOS3218!C[-256], MATCH(RC[-2], BOS3218!C[-255], 0)), RC[-2]), \"\"),\n IF(RC[-1]=\"종류형자펀드\", IF(ISNUMBER(MATCH(RC[-2], BOS3218!C[-254], 0)),\n   IF(AND(INDEX(BOS3218!C[-253], MATCH(RC[-2], BOS3218!C[-254], 0))=\"O\", INDEX(BOS3218!C[-252], MATCH(RC[-2], BOS3218!C[-254], 0))=\"O\"), RC[-2],\n   IF(INDEX(BOS3218!C[-253], MATCH(RC[-2], BOS3218!C[-254], 0))=\"O\", INDEX(BOS3218!C[-255], MATCH(RC[-2], BOS3218!C[-254], 0)),\n   IF(AND(INDEX(BOS3218!C[-253], MATCH(RC[-2], BOS3218!C[-254], 0))=\"X\", INDEX(BOS3218!C[-252], MATCH(RC[-2], BOS3218!C[-254], 0))=\"X\", INDEX(BOS3218!C[-251], MATCH(RC[-2], BOS3218!C[-254], 0))=\"X\"), INDEX(BOS3218!C[-256], MATCH(RC[-2], BOS3218!C[-254], 0)), \"\"))), \"\")))\n\n)"
+ },
+ {
+  "col": 267,
+  "header": "최종모펀드유무",
+  "formula_last": "=IF([@펀드약칭]=[@최종모펀드코드],\"O\",\"X\")",
+  "formula_r1c1": "=IF([@펀드약칭]=[@최종모펀드코드],\"O\",\"X\")"
+ },
+ {
+  "col": 268,
+  "header": "최종모펀드명",
+  "formula_last": "=TEXT(INDEX($E:$E,MATCH(JF42258,$JD:$JD,0)),\"00000\")",
+  "formula_r1c1": "=TEXT(INDEX(C5,MATCH(RC[-2],C264,0)),\"00000\")"
+ },
+ {
+  "col": 269,
+  "header": "수익자1",
+  "formula_last": "=IFERROR(IF([@공모사모구분]=\"사모\",INDEX(수익자!$B:$B,MATCH([@펀드약칭],수익자!$A:$A,0)),\"\"),\"\")",
+  "formula_r1c1": "=IFERROR(IF([@공모사모구분]=\"사모\",INDEX(수익자!C2,MATCH([@펀드약칭],수익자!C1,0)),\"\"),\"\")"
+ },
+ {
+  "col": 270,
+  "header": "수익자2",
+  "formula_last": "=IFERROR(IF([@공모사모구분]=\"사모\",INDEX(수익자!$C:$C,MATCH([@펀드약칭],수익자!$A:$A,0)),\"\"),\"\")",
+  "formula_r1c1": "=IFERROR(IF([@공모사모구분]=\"사모\",INDEX(수익자!C3,MATCH([@펀드약칭],수익자!C1,0)),\"\"),\"\")"
+ },
+ {
+  "col": 271,
+  "header": "수익자3",
+  "formula_last": "=IFERROR(IF([@공모사모구분]=\"사모\",INDEX(수익자!$D:$D,MATCH([@펀드약칭],수익자!$A:$A,0)),\"\"),\"\")",
+  "formula_r1c1": "=IFERROR(IF([@공모사모구분]=\"사모\",INDEX(수익자!C4,MATCH([@펀드약칭],수익자!C1,0)),\"\"),\"\")"
+ },
+ {
+  "col": 272,
+  "header": "수익자수탁고",
+  "formula_last": "=IF(OR(AND(COUNTBLANK(JI42258:JK42258)=3, NOT(ISBLANK(JI42258))), AND(ISNUMBER(JJ42258), JJ42258=0, ISNUMBER(JK42258), JK42258=0)), [@기획실수탁고분류], IF(AND(COUNTA(JI42258:JJ42258)=2, OR(ISBLANK(JK42258), JK42258=0)), [@기획실수탁고분류]/2, IF(COUNTA(JI42258:JK42258)=3, [@기획실수탁고분류]/3, \"조건 미충족\")))",
+  "formula_r1c1": "=IF(OR(AND(COUNTBLANK(RC[-3]:RC[-1])=3, NOT(ISBLANK(RC[-3]))), AND(ISNUMBER(RC[-2]), RC[-2]=0, ISNUMBER(RC[-1]), RC[-1]=0)), [@기획실수탁고분류], IF(AND(COUNTA(RC[-3]:RC[-2])=2, OR(ISBLANK(RC[-1]), RC[-1]=0)), [@기획실수탁고분류]/2, IF(COUNTA(RC[-3]:RC[-1])=3, [@기획실수탁고분류]/3, \"조건 미충족\")))"
+ },
+ {
+  "col": 273,
+  "header": null,
+  "formula_last": "",
+  "formula_r1c1": ""
+ },
+ {
+  "col": 274,
+  "header": null,
+  "formula_last": "",
+  "formula_r1c1": ""
+ }
+]

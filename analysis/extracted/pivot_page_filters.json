@@ -1,0 +1,1535 @@
+[
+ {
+  "name": "피벗 테이블10",
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "multi": false,
+    "current_page": "FI운용본부",
+    "items": [
+     {
+      "name": "FI운용본부",
+      "visible": true
+     },
+     {
+      "name": "공동",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "마케팅총괄",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "모자구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "모펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "자펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "운용펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "판매펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "제외조건",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "",
+      "visible": true
+     },
+     {
+      "name": "가상",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "MOS세부분류",
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "FI운용본부",
+      "visible": true
+     },
+     {
+      "name": "공동",
+      "visible": true
+     },
+     {
+      "name": "글로벌주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "마케팅총괄",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "모자구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "모펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "자펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "운용펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "판매펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "제외조건",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "",
+      "visible": true
+     },
+     {
+      "name": "가상",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "팀별수탁고",
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "FI운용본부",
+      "visible": true
+     },
+     {
+      "name": "공동",
+      "visible": true
+     },
+     {
+      "name": "글로벌주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "마케팅총괄",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "모자구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "모펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "자펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "운용펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "판매펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "제외조건",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "",
+      "visible": true
+     },
+     {
+      "name": "가상",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "수익자1",
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "FI운용본부",
+      "visible": true
+     },
+     {
+      "name": "공동",
+      "visible": true
+     },
+     {
+      "name": "글로벌주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "마케팅총괄",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "모자구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "모펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "자펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "운용펀드",
+      "visible": true
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "판매펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "제외조건",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "",
+      "visible": true
+     },
+     {
+      "name": "가상",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "수익자2",
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "FI운용본부",
+      "visible": true
+     },
+     {
+      "name": "공동",
+      "visible": true
+     },
+     {
+      "name": "글로벌주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "마케팅총괄",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "모자구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "모펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "자펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "운용펀드",
+      "visible": true
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "판매펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "제외조건",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "",
+      "visible": true
+     },
+     {
+      "name": "가상",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "팀1",
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "multi": false,
+    "current_page": "FI운용본부",
+    "items": [
+     {
+      "name": "FI운용본부",
+      "visible": true
+     },
+     {
+      "name": "공동",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "마케팅총괄",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "팀분류",
+    "multi": false,
+    "current_page": "FI운용1부",
+    "items": [
+     {
+      "name": "0",
+      "visible": false
+     },
+     {
+      "name": "ESG운용부",
+      "visible": false
+     },
+     {
+      "name": "ETF운용부",
+      "visible": false
+     },
+     {
+      "name": "FI운용1부",
+      "visible": true
+     },
+     {
+      "name": "FI운용2부",
+      "visible": false
+     },
+     {
+      "name": "글로벌퀀트운용부",
+      "visible": false
+     },
+     {
+      "name": "주식운용1부",
+      "visible": false
+     },
+     {
+      "name": "주식운용2부",
+      "visible": false
+     },
+     {
+      "name": "주식운용3부",
+      "visible": false
+     },
+     {
+      "name": "해외FI운용부",
+      "visible": false
+     },
+     {
+      "name": "해외주식운용부",
+      "visible": false
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "멀티에셋운용부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "4.31",
+      "visible": false
+     },
+     {
+      "name": "4.35",
+      "visible": false
+     },
+     {
+      "name": "4.08",
+      "visible": false
+     },
+     {
+      "name": "3.92",
+      "visible": false
+     },
+     {
+      "name": "4.36",
+      "visible": false
+     },
+     {
+      "name": "4.09",
+      "visible": false
+     },
+     {
+      "name": "4.41",
+      "visible": false
+     },
+     {
+      "name": "4.4",
+      "visible": false
+     },
+     {
+      "name": "2.75",
+      "visible": false
+     },
+     {
+      "name": "4.64",
+      "visible": false
+     },
+     {
+      "name": "4.67",
+      "visible": false
+     },
+     {
+      "name": "4.32",
+      "visible": false
+     },
+     {
+      "name": "0.05",
+      "visible": false
+     },
+     {
+      "name": "5.3",
+      "visible": false
+     },
+     {
+      "name": "3.62",
+      "visible": false
+     },
+     {
+      "name": "2.91",
+      "visible": false
+     },
+     {
+      "name": "2.21",
+      "visible": false
+     },
+     {
+      "name": "0.86",
+      "visible": false
+     },
+     {
+      "name": "3.02",
+      "visible": false
+     },
+     {
+      "name": "4.8",
+      "visible": false
+     },
+     {
+      "name": "4.7",
+      "visible": false
+     },
+     {
+      "name": "4.24",
+      "visible": false
+     },
+     {
+      "name": "2.1",
+      "visible": false
+     },
+     {
+      "name": "3.72",
+      "visible": false
+     },
+     {
+      "name": "4.2",
+      "visible": false
+     },
+     {
+      "name": "5.29",
+      "visible": false
+     },
+     {
+      "name": "2.06",
+      "visible": false
+     },
+     {
+      "name": "3.88",
+      "visible": false
+     },
+     {
+      "name": "4.39",
+      "visible": false
+     },
+     {
+      "name": "2.45",
+      "visible": false
+     },
+     {
+      "name": "5.03",
+      "visible": false
+     },
+     {
+      "name": "4.9",
+      "visible": false
+     },
+     {
+      "name": "4.42",
+      "visible": false
+     },
+     {
+      "name": "4.29",
+      "visible": false
+     },
+     {
+      "name": "4.17",
+      "visible": false
+     },
+     {
+      "name": "3.7",
+      "visible": false
+     },
+     {
+      "name": "솔루션전략부",
+      "visible": false
+     },
+     {
+      "name": "해외비즈니스담당",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "제외조건",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "",
+      "visible": true
+     },
+     {
+      "name": "가상",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "최종모펀드유무",
+    "multi": false,
+    "current_page": "O",
+    "items": [
+     {
+      "name": "O",
+      "visible": true
+     },
+     {
+      "name": "X",
+      "visible": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "팀3",
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "multi": false,
+    "current_page": "FI운용본부",
+    "items": [
+     {
+      "name": "FI운용본부",
+      "visible": true
+     },
+     {
+      "name": "공동",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "마케팅총괄",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "팀분류",
+    "multi": false,
+    "current_page": "해외FI운용부",
+    "items": [
+     {
+      "name": "0",
+      "visible": false
+     },
+     {
+      "name": "ESG운용부",
+      "visible": false
+     },
+     {
+      "name": "ETF운용부",
+      "visible": false
+     },
+     {
+      "name": "FI운용1부",
+      "visible": false
+     },
+     {
+      "name": "FI운용2부",
+      "visible": false
+     },
+     {
+      "name": "글로벌퀀트운용부",
+      "visible": false
+     },
+     {
+      "name": "주식운용1부",
+      "visible": false
+     },
+     {
+      "name": "주식운용2부",
+      "visible": false
+     },
+     {
+      "name": "주식운용3부",
+      "visible": false
+     },
+     {
+      "name": "해외FI운용부",
+      "visible": true
+     },
+     {
+      "name": "해외주식운용부",
+      "visible": false
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "멀티에셋운용부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "4.31",
+      "visible": false
+     },
+     {
+      "name": "4.35",
+      "visible": false
+     },
+     {
+      "name": "4.08",
+      "visible": false
+     },
+     {
+      "name": "3.92",
+      "visible": false
+     },
+     {
+      "name": "4.36",
+      "visible": false
+     },
+     {
+      "name": "4.09",
+      "visible": false
+     },
+     {
+      "name": "4.41",
+      "visible": false
+     },
+     {
+      "name": "4.4",
+      "visible": false
+     },
+     {
+      "name": "2.75",
+      "visible": false
+     },
+     {
+      "name": "4.64",
+      "visible": false
+     },
+     {
+      "name": "4.67",
+      "visible": false
+     },
+     {
+      "name": "4.32",
+      "visible": false
+     },
+     {
+      "name": "0.05",
+      "visible": false
+     },
+     {
+      "name": "5.3",
+      "visible": false
+     },
+     {
+      "name": "3.62",
+      "visible": false
+     },
+     {
+      "name": "2.91",
+      "visible": false
+     },
+     {
+      "name": "2.21",
+      "visible": false
+     },
+     {
+      "name": "0.86",
+      "visible": false
+     },
+     {
+      "name": "3.02",
+      "visible": false
+     },
+     {
+      "name": "4.8",
+      "visible": false
+     },
+     {
+      "name": "4.7",
+      "visible": false
+     },
+     {
+      "name": "4.24",
+      "visible": false
+     },
+     {
+      "name": "2.1",
+      "visible": false
+     },
+     {
+      "name": "3.72",
+      "visible": false
+     },
+     {
+      "name": "4.2",
+      "visible": false
+     },
+     {
+      "name": "5.29",
+      "visible": false
+     },
+     {
+      "name": "2.06",
+      "visible": false
+     },
+     {
+      "name": "3.88",
+      "visible": false
+     },
+     {
+      "name": "4.39",
+      "visible": false
+     },
+     {
+      "name": "2.45",
+      "visible": false
+     },
+     {
+      "name": "5.03",
+      "visible": false
+     },
+     {
+      "name": "4.9",
+      "visible": false
+     },
+     {
+      "name": "4.42",
+      "visible": false
+     },
+     {
+      "name": "4.29",
+      "visible": false
+     },
+     {
+      "name": "4.17",
+      "visible": false
+     },
+     {
+      "name": "3.7",
+      "visible": false
+     },
+     {
+      "name": "솔루션전략부",
+      "visible": false
+     },
+     {
+      "name": "해외비즈니스담당",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "제외조건",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "",
+      "visible": true
+     },
+     {
+      "name": "가상",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "최종모펀드유무",
+    "multi": false,
+    "current_page": "O",
+    "items": [
+     {
+      "name": "O",
+      "visible": true
+     },
+     {
+      "name": "X",
+      "visible": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "팀2",
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "multi": false,
+    "current_page": "FI운용본부",
+    "items": [
+     {
+      "name": "FI운용본부",
+      "visible": true
+     },
+     {
+      "name": "공동",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "마케팅총괄",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "팀분류",
+    "multi": false,
+    "current_page": "FI운용2부",
+    "items": [
+     {
+      "name": "0",
+      "visible": false
+     },
+     {
+      "name": "ESG운용부",
+      "visible": false
+     },
+     {
+      "name": "ETF운용부",
+      "visible": false
+     },
+     {
+      "name": "FI운용1부",
+      "visible": false
+     },
+     {
+      "name": "FI운용2부",
+      "visible": true
+     },
+     {
+      "name": "글로벌퀀트운용부",
+      "visible": false
+     },
+     {
+      "name": "주식운용1부",
+      "visible": false
+     },
+     {
+      "name": "주식운용2부",
+      "visible": false
+     },
+     {
+      "name": "주식운용3부",
+      "visible": false
+     },
+     {
+      "name": "해외FI운용부",
+      "visible": false
+     },
+     {
+      "name": "해외주식운용부",
+      "visible": false
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "멀티에셋운용부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "4.31",
+      "visible": false
+     },
+     {
+      "name": "4.35",
+      "visible": false
+     },
+     {
+      "name": "4.08",
+      "visible": false
+     },
+     {
+      "name": "3.92",
+      "visible": false
+     },
+     {
+      "name": "4.36",
+      "visible": false
+     },
+     {
+      "name": "4.09",
+      "visible": false
+     },
+     {
+      "name": "4.41",
+      "visible": false
+     },
+     {
+      "name": "4.4",
+      "visible": false
+     },
+     {
+      "name": "2.75",
+      "visible": false
+     },
+     {
+      "name": "4.64",
+      "visible": false
+     },
+     {
+      "name": "4.67",
+      "visible": false
+     },
+     {
+      "name": "4.32",
+      "visible": false
+     },
+     {
+      "name": "0.05",
+      "visible": false
+     },
+     {
+      "name": "5.3",
+      "visible": false
+     },
+     {
+      "name": "3.62",
+      "visible": false
+     },
+     {
+      "name": "2.91",
+      "visible": false
+     },
+     {
+      "name": "2.21",
+      "visible": false
+     },
+     {
+      "name": "0.86",
+      "visible": false
+     },
+     {
+      "name": "3.02",
+      "visible": false
+     },
+     {
+      "name": "4.8",
+      "visible": false
+     },
+     {
+      "name": "4.7",
+      "visible": false
+     },
+     {
+      "name": "4.24",
+      "visible": false
+     },
+     {
+      "name": "2.1",
+      "visible": false
+     },
+     {
+      "name": "3.72",
+      "visible": false
+     },
+     {
+      "name": "4.2",
+      "visible": false
+     },
+     {
+      "name": "5.29",
+      "visible": false
+     },
+     {
+      "name": "2.06",
+      "visible": false
+     },
+     {
+      "name": "3.88",
+      "visible": false
+     },
+     {
+      "name": "4.39",
+      "visible": false
+     },
+     {
+      "name": "2.45",
+      "visible": false
+     },
+     {
+      "name": "5.03",
+      "visible": false
+     },
+     {
+      "name": "4.9",
+      "visible": false
+     },
+     {
+      "name": "4.42",
+      "visible": false
+     },
+     {
+      "name": "4.29",
+      "visible": false
+     },
+     {
+      "name": "4.17",
+      "visible": false
+     },
+     {
+      "name": "3.7",
+      "visible": false
+     },
+     {
+      "name": "솔루션전략부",
+      "visible": false
+     },
+     {
+      "name": "해외비즈니스담당",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "제외조건",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "",
+      "visible": true
+     },
+     {
+      "name": "가상",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "최종모펀드유무",
+    "multi": false,
+    "current_page": "O",
+    "items": [
+     {
+      "name": "O",
+      "visible": true
+     },
+     {
+      "name": "X",
+      "visible": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "팀별순자산",
+  "page_fields": [
+   {
+    "name": "운용부서",
+    "multi": false,
+    "current_page": "FI운용본부",
+    "items": [
+     {
+      "name": "FI운용본부",
+      "visible": true
+     },
+     {
+      "name": "공동",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "주식운용본부",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     },
+     {
+      "name": "GIS운용본부",
+      "visible": false
+     },
+     {
+      "name": "글로벌주식운용담당",
+      "visible": false
+     },
+     {
+      "name": "마케팅총괄",
+      "visible": false
+     }
+    ]
+   },
+   {
+    "name": "모자구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "모펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "자펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "종류형구분",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "운용펀드",
+      "visible": false
+     },
+     {
+      "name": "일반펀드",
+      "visible": true
+     },
+     {
+      "name": "판매펀드",
+      "visible": true
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   },
+   {
+    "name": "제외조건",
+    "multi": true,
+    "current_page": "(All)",
+    "items": [
+     {
+      "name": "",
+      "visible": true
+     },
+     {
+      "name": "가상",
+      "visible": false
+     },
+     {
+      "name": "(blank)",
+      "visible": -2146826246
+     }
+    ]
+   }
+  ]
+ }
+]

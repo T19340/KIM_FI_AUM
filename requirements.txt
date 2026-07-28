@@ -1,0 +1,6 @@
+# FI운용본부 수탁고 도구 (개발·검증 환경: Python 3.14, Windows 11)
+pandas>=2.2
+pyarrow>=15          # parquet 히스토리 읽기
+openpyxl>=3.1        # BOS3218 xlsx 읽기 (양식 저장에는 쓰지 말 것)
+pywin32>=306 ; sys_platform == "win32"   # make_report.py 의 Excel COM
+pyxlsb>=1.0          # build_history.py 의 xlsb 추출 (평상시 불필요)
