@@ -45,6 +45,66 @@ def _xlserial(ts):
     return int((ts.normalize() - pd.Timestamp("1899-12-30")).days)
 
 
+def _mapped_codes(ben):
+    """수익자1~3 중 하나라도 유효값이 있는 펀드코드 — 실제로 배분되는 매핑."""
+    out = set()
+    for code, r in ben.iterrows():
+        for i in (1, 2, 3):
+            if str(r.get(f"수익자{i}") or "").strip() not in ("", "0", "nan", "None"):
+                out.add(code)
+                break
+    return out
+
+
+def check_beneficiary_coverage(df, dates, ben=None):
+    """수익자 표의 침묵 실패 2종을 리포트 두 열(2025YE·현재)에서 점검한다.
+
+    ① 매핑 없는 사모펀드 — 부서별 표에는 들어가는데 수익자 표에서 조용히 빠진다.
+      (2026-07-28 리포트에서 신규 5JM61이 이렇게 1,468억 누락됐다.)
+    ② 모펀드(운용펀드)에 붙은 매핑 — 클래스도 매핑돼 있으면 수익자 표만 이중계상된다.
+
+    끝에 대조 한 줄을 남긴다: 수익자 배분 합 == 사모 계상 총액이면 둘 다 0이다.
+    """
+    if ben is None:
+        ben = sg.load_beneficiary()
+    mapped = _mapped_codes(ben)
+    for key, label in (("ye25", "2025YE"), ("current", "현재")):
+        d = dates.get(key)
+        if d is None:
+            continue
+        base = sg._base(df, [d])
+        base = base[base["팀분류"].isin(sg.TEAMS)
+                    & (base["공모사모구분"] == "사모")].copy()
+        base["_amt"] = pd.to_numeric(base["기획실수탁고분류"], errors="coerce")
+        total = base["_amt"].sum()
+
+        un = base[~base["펀드약칭"].isin(mapped)]
+        if len(un):
+            print(f"경고: [{label}] 수익자 매핑 없는 사모펀드 {len(un)}건 "
+                  f"{un['_amt'].sum():,.1f}억 — 수익자 표에서 빠짐 "
+                  "(data/수익자.csv에 클래스 단위로 추가)")
+            for _, r in un.sort_values("_amt", ascending=False).iterrows():
+                print(f"   {r['펀드약칭']} {str(r['펀드명'])[:40]} "
+                      f"{r['팀분류']} {r['_amt']:,.1f}억")
+
+        mo = sg._base(df, [d], jongryu=None)
+        mo = mo[(mo["공모사모구분"] == "사모") & (mo["종류형구분"] == "운용펀드")
+                & mo["펀드약칭"].isin(mapped)].copy()
+        if len(mo):
+            mo["_amt"] = pd.to_numeric(mo["기획실수탁고분류"], errors="coerce")
+            print(f"경고: [{label}] 모펀드(운용펀드)에 붙은 매핑 {len(mo)}건 "
+                  f"{mo['_amt'].sum():,.1f}억 — 클래스도 매핑돼 있으면 이중계상 "
+                  "(매핑은 클래스 단위, 모는 비움)")
+            for _, r in mo.iterrows():
+                print(f"   {r['펀드약칭']} {str(r['펀드명'])[:40]} {r['_amt']:,.1f}억")
+
+        alloc = sg.beneficiary_alloc(df, [d], ben).iloc[:, 0].sum()
+        diff = alloc - total
+        verdict = "일치" if abs(diff) < 0.05 else f"차이 {diff:+,.1f}억 (위 경고 확인)"
+        print(f"  대조 [{label}] 수익자 배분 {alloc:,.1f}억 / "
+              f"사모 계상 {total:,.1f}억 → {verdict}")
+
+
 def fill_template(df, dates, out_path):
     cur = _xlserial(dates["current"])
     ye25 = _xlserial(dates["ye25"])
@@ -188,6 +248,7 @@ def main():
     dates = sg.pick_dates(df, target)
     print("기준일:", {k: (v.date() if v is not None else None)
                      for k, v in dates.items()})
+    check_beneficiary_coverage(df, dates)
 
     out = args.out or os.path.join(
         sg.BASE, "output", f"FI운용본부수탁고_{target.strftime('%Y%m%d')}.xlsx")
