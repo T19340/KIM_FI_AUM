@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""월말기준수탁고 리포트(xlsx) 생성 — 양식 파일에 Excel COM으로 값 채움.
+r"""월말기준수탁고 리포트(xlsx) 생성 — 양식 파일에 Excel COM으로 값 채움.
 
 template/FI운용본부수탁고_양식.xlsx 사본에 계산값만 써넣는다. COM을 쓰는 이유:
 openpyxl 저장은 데이터 막대의 x14 확장(0축·음수 붉은 역방향 막대)을 벗겨낸다.
@@ -7,9 +7,13 @@ openpyxl 저장은 데이터 막대의 x14 확장(0축·음수 붉은 역방향 
 
 수익자 명단·서식 관리는 양식 파일에서 직접 한다 (수익자 표 B/F/J열).
 
+산출물은 부서 공유 폴더(K:\부서 공유\FI운용본부\본부 수탁고 현황)에 저장한다.
+K: 접근이 안 되면 로컬 output\ 으로 물러나며, --out 으로 직접 지정할 수도 있다.
+
 사용:
   python make_report.py                        # rawdata 최신 처리일 기준
   python make_report.py --date 2026-07-14     # 기준일 지정
+  python make_report.py --out <경로>            # 저장 위치 직접 지정
 """
 import argparse
 import os
@@ -20,6 +24,8 @@ import win32com.client
 import sutakgo as sg
 
 RAWDATA_DIR = r"K:\부서 공유\FI운용1부\10. 개인별폴더\김현수\rawdata"
+OUTPUT_DIR = r"K:\부서 공유\FI운용본부\본부 수탁고 현황"   # 부서 공유 정본 위치
+OUTPUT_DIR_LOCAL = os.path.join(sg.BASE, "output")        # K: 접근 불가 시 대체
 TEMPLATE = os.path.join(sg.BASE, "template", "FI운용본부수탁고_양식.xlsx")
 EXPECTED_TEAM_ROWS = 19   # 부서별 표(7~25행)의 양식 행수
 
@@ -250,9 +256,20 @@ def main():
                      for k, v in dates.items()})
     check_beneficiary_coverage(df, dates)
 
-    out = args.out or os.path.join(
-        sg.BASE, "output", f"FI운용본부수탁고_{target.strftime('%Y%m%d')}.xlsx")
+    if args.out:
+        out = args.out
+    else:
+        outdir = OUTPUT_DIR
+        if not os.path.isdir(outdir):
+            outdir = OUTPUT_DIR_LOCAL
+            print(f"경고: 공유 폴더 접근 불가 → 로컬에 저장 ({OUTPUT_DIR})")
+        out = os.path.join(
+            outdir, f"FI운용본부수탁고_{target.strftime('%Y%m%d')}.xlsx")
     os.makedirs(os.path.dirname(out), exist_ok=True)
+    if os.path.exists(out):
+        mt = pd.Timestamp(os.path.getmtime(out), unit="s", tz="UTC").tz_convert(
+            "Asia/Seoul").strftime("%Y-%m-%d %H:%M")
+        print(f"경고: 같은 이름의 기존 파일을 덮어씁니다 (기존 수정일 {mt})")
     fill_template(df, dates, out)
     print("저장:", out)
 

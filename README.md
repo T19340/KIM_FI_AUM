@@ -45,6 +45,18 @@ git pull        # 이후 업데이트는 이 한 줄
 데이터(`data/`)가 저장소에 함께 들어 있어 **clone 직후 바로 계산된다**. K: 드라이브가
 안 잡힌 PC에서도 `aum.py` 는 경고 한 줄을 내고 히스토리만으로 동작한다.
 
+### Claude Code 스킬 설치 — `/FI본부수탁고`
+
+저장소의 `skills/FI본부수탁고/SKILL.md` 를 사용자 스킬 폴더로 복사하면 Claude Code에서
+`/FI본부수탁고` 슬래시 명령으로 이 도구를 쓸 수 있다. PowerShell에서:
+
+```powershell
+Copy-Item -Recurse -Force ".\skills\FI본부수탁고" "$env:USERPROFILE\.claude\skills\"
+```
+
+복사 후 Claude Code를 새로 띄우면 명령 목록에 잡힌다. 스킬 본문을 고쳤다면 저장소 쪽
+사본도 같이 갱신해 두 벌이 벌어지지 않게 한다.
+
 ---
 
 ## 2. 사용법
@@ -84,10 +96,17 @@ FI운용2부    91245.2  71236.8        -   1260.4  163742.4
 python make_report.py                     # rawdata 최신 처리일 기준
 python make_report.py --date 2026-07-14   # 기준일 지정
 python make_report.py --csv-dir "D:\some\rawdata"   # rawdata 경로 변경
+python make_report.py --out "D:\임시\보고.xlsx"      # 저장 위치 직접 지정
 ```
 
 `template/FI운용본부수탁고_양식.xlsx` 사본에 값을 채워
-`output/FI운용본부수탁고_YYYYMMDD.xlsx` 를 만든다. 실행 중 나오는 **경고 줄은 그냥
+`K:\부서 공유\FI운용본부\본부 수탁고 현황\FI운용본부수탁고_YYYYMMDD.xlsx` 를 만든다.
+부서 공유 폴더가 곧 정본 위치이고 `수탁고_메일발송.py` 도 그 폴더에서 첨부할 파일을
+찾으므로, 별도로 복사할 필요가 없다. K: 드라이브가 안 잡히면 경고 한 줄을 내고
+로컬 `output/` 으로 물러난다. 같은 이름의 파일이 이미 있으면 **덮어쓰기 전에 기존
+파일의 수정일을 경고 줄로 알린다** — 손으로 만든 파일을 지우는 것이 아닌지 확인할 것.
+
+실행 중 나오는 **경고 줄은 그냥
 넘기지 말 것** — 수익자 매핑이 없는 신규 사모펀드, 모펀드에 붙은 매핑(클래스와
 겹치면 이중계상), 양식 명단에 없는 수익자, 부서별 표 행 구성 변경을 알려준다.
 
