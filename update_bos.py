@@ -71,15 +71,53 @@ def selftest():
     return ok
 
 
+def _read_bos_drm(src):
+    """DRM 래핑 출력본은 zip 구조가 아니라 openpyxl이 못 연다(BadZipFile).
+
+    Excel COM으로 값만 통으로 읽는다 — COM도 ''(부재 마커)와 None(빈 셀)을
+    구분해 돌려주는 것을 실측 확인(2026-08-06). Excel의 SaveAs는 DRM이 다시
+    래핑하므로 변환 저장 경로는 쓸 수 없다.
+    """
+    from win32com.client import DispatchEx
+    app = DispatchEx("Excel.Application")
+    app.Visible = False
+    app.DisplayAlerts = False
+    try:
+        wb = app.Workbooks.Open(os.path.abspath(src), ReadOnly=True)
+        ws = wb.Worksheets(1)
+        last = ws.UsedRange.Row + ws.UsedRange.Rows.Count - 1
+        vals = ws.Range(ws.Cells(1, 1), ws.Cells(last, 9)).Value
+        wb.Close(False)
+    finally:
+        app.Quit()
+
+    def norm(v):
+        if v is None:
+            return None
+        if isinstance(v, float) and v.is_integer():
+            return str(int(v))
+        return str(v)
+    rows = [tuple(norm(v) for v in r) for r in vals]
+    return pd.DataFrame(rows[1:], columns=[str(c).replace("\n", "")
+                                           for c in rows[0]], dtype=object)
+
+
 def read_bos_xlsx(src):
     """BOS3218 xlsx를 openpyxl로 직접 읽는다.
 
     pd.read_excel 은 '모펀드 부재 시작' 마커인 빈 문자열('') 셀을 NaN으로
     바꿔버려 부재 구역 전체가 앞 블록 모펀드를 상속하는 치명적 오류를 낳는다.
     openpyxl은 ''(마커)와 None(위 블록 계속)을 구분해 보존한다.
+    DRM 래핑 출력본이면 Excel COM 경로로 자동 전환한다.
     """
+    import zipfile
+
     import openpyxl
-    wb = openpyxl.load_workbook(src, read_only=True, data_only=True)
+    try:
+        wb = openpyxl.load_workbook(src, read_only=True, data_only=True)
+    except zipfile.BadZipFile:
+        print("  (DRM 래핑 감지 — Excel COM으로 읽기)")
+        return _read_bos_drm(src)
     ws = wb[wb.sheetnames[0]]
     rows = list(ws.iter_rows(values_only=True))
 
