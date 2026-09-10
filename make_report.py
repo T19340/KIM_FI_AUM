@@ -28,6 +28,7 @@ OUTPUT_DIR = r"K:\부서 공유\FI운용본부\본부 수탁고 현황"   # 부�
 OUTPUT_DIR_LOCAL = os.path.join(sg.BASE, "output")        # K: 접근 불가 시 대체
 TEMPLATE = os.path.join(sg.BASE, "template", "FI운용본부수탁고_양식.xlsx")
 EXPECTED_TEAM_ROWS = 19   # 부서별 표(7~25행)의 양식 행수
+BENEFICIARY_EXCLUSION_MARKER = "사모 수익자 아님"
 
 
 def qlabel(d):
@@ -62,18 +63,26 @@ def _mapped_codes(ben):
     return out
 
 
+def _beneficiary_excluded_codes(ben):
+    """개인 리테일처럼 수익자표에서 의도적으로 제외하는 사모 펀드코드."""
+    notes = ben.get("부가설명", pd.Series("", index=ben.index)).fillna("").astype(str)
+    return set(notes[notes.str.contains(BENEFICIARY_EXCLUSION_MARKER, regex=False)].index)
+
+
 def check_beneficiary_coverage(df, dates, ben=None):
-    """수익자 표의 침묵 실패 2종을 리포트 두 열(2025YE·현재)에서 점검한다.
+    """수익자 표의 침묵 실패를 리포트 두 열(2025YE·현재)에서 점검한다.
 
-    ① 매핑 없는 사모펀드 — 부서별 표에는 들어가는데 수익자 표에서 조용히 빠진다.
+    ① 의도적 제외 — 개인 리테일은 수익자표에서만 제외하고 본부 수탁고에는 포함한다.
+    ② 매핑 없는 사모펀드 — 부서별 표에는 들어가는데 수익자 표에서 조용히 빠진다.
       (2026-07-28 리포트에서 신규 5JM61이 이렇게 1,468억 누락됐다.)
-    ② 모펀드(운용펀드)에 붙은 매핑 — 클래스도 매핑돼 있으면 수익자 표만 이중계상된다.
+    ③ 모펀드(운용펀드)에 붙은 매핑 — 클래스도 매핑돼 있으면 수익자 표만 이중계상된다.
 
-    끝에 대조 한 줄을 남긴다: 수익자 배분 합 == 사모 계상 총액이면 둘 다 0이다.
+    끝에 대조 한 줄을 남긴다: 수익자 배분 합 == 수익자 대상 사모 계상 총액.
     """
     if ben is None:
         ben = sg.load_beneficiary()
     mapped = _mapped_codes(ben)
+    excluded = _beneficiary_excluded_codes(ben)
     for key, label in (("ye25", "2025YE"), ("current", "현재")):
         d = dates.get(key)
         if d is None:
@@ -82,9 +91,17 @@ def check_beneficiary_coverage(df, dates, ben=None):
         base = base[base["팀분류"].isin(sg.TEAMS)
                     & (base["공모사모구분"] == "사모")].copy()
         base["_amt"] = pd.to_numeric(base["기획실수탁고분류"], errors="coerce")
-        total = base["_amt"].sum()
+        excluded_rows = base[base["펀드약칭"].isin(excluded)]
+        if len(excluded_rows):
+            print(f"  안내: [{label}] 개인 리테일 {len(excluded_rows)}건 "
+                  f"{excluded_rows['_amt'].sum():,.1f}억 — 수익자표 제외")
+            for _, r in excluded_rows.sort_values("_amt", ascending=False).iterrows():
+                print(f"   {r['펀드약칭']} {str(r['펀드명'])[:40]} "
+                      f"{r['팀분류']} {r['_amt']:,.1f}억")
+        eligible = base[~base["펀드약칭"].isin(excluded)]
+        total = eligible["_amt"].sum()
 
-        un = base[~base["펀드약칭"].isin(mapped)]
+        un = eligible[~eligible["펀드약칭"].isin(mapped)]
         if len(un):
             print(f"경고: [{label}] 수익자 매핑 없는 사모펀드 {len(un)}건 "
                   f"{un['_amt'].sum():,.1f}억 — 수익자 표에서 빠짐 "
@@ -108,7 +125,7 @@ def check_beneficiary_coverage(df, dates, ben=None):
         diff = alloc - total
         verdict = "일치" if abs(diff) < 0.05 else f"차이 {diff:+,.1f}억 (위 경고 확인)"
         print(f"  대조 [{label}] 수익자 배분 {alloc:,.1f}억 / "
-              f"사모 계상 {total:,.1f}억 → {verdict}")
+              f"수익자 대상 사모 계상 {total:,.1f}억 → {verdict}")
 
 
 def fill_template(df, dates, out_path):
