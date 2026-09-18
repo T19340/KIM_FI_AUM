@@ -347,7 +347,7 @@ for r in range(64, 81):
               f"py=({ye},{cu}) xl=({gt_ye},{gt_cur})")
 print(f"  수익자표: {nb}개 대조, {bugn}개 예상된 차이(엑셀 SUMIF 범위 버그)")
 
-tb = sg.topbottom_block(df, dates, n=5)
+tb = sg.topbottom_block(df, dates, n=5, latest_names=False)  # 엑셀 원본 이름 재현
 r = 45
 for team in sg.TEAMS:
     for i in range(5):

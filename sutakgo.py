@@ -264,12 +264,15 @@ def pivot_category(df, dates):
     return g
 
 
-def pivot_fund_diff(df, team, date_base, date_cur):
-    """팀1/2/3: 최종모펀드명별 수탁고와 증감 (최종모펀드유무=O, FI운용본부)."""
+def pivot_fund_diff(df, team, date_base, date_cur, by="최종모펀드명"):
+    """팀1/2/3: 최종모펀드별 수탁고와 증감 (최종모펀드유무=O, FI운용본부).
+
+    by: 묶음 키. 엑셀 피벗은 최종모펀드명(코드 최초 등장 이름)으로 묶는다.
+    """
     d = _base(df, [date_base, date_cur], buseo=F_BUSEO_FI,
               moja=None, jongryu=None)  # 팀1~3 피벗은 모자·종류형 필터 없음
     d = d[(d["팀분류"] == team) & (d["최종모펀드유무"] == "O")]
-    g = (d.groupby(["최종모펀드명", "처리일"])["기획실수탁고분류"]
+    g = (d.groupby([by, "처리일"])["기획실수탁고분류"]
          .sum().unstack("처리일").reindex(columns=[date_base, date_cur]))
     g.columns = ["base", "cur"]
     g["diff"] = g["cur"].fillna(0) - g["base"].fillna(0)
@@ -292,6 +295,12 @@ def pivot_beneficiary(df, dates, col):
 # ---------------------------------------------------------------- 리포트 값
 def clean_fund_name(name):
     return str(name).replace("한국투자", "").replace("증권투자신탁", "")
+
+
+def latest_fund_names(df, upto):
+    """펀드약칭 → upto(포함) 이전 가장 최근 처리일의 펀드명 (개명 반영)."""
+    d = df[df["처리일"] <= upto].sort_values("처리일", kind="stable")
+    return d.groupby("펀드약칭")["펀드명"].last().astype(str).str.strip()
 
 
 def pick_dates(df, target):
@@ -400,11 +409,22 @@ def category_block(df, dates):
     return out
 
 
-def topbottom_block(df, dates, n=5):
-    """YTD 증감 상/하위 표 (45~59행): 팀별 상위 n·하위 n."""
+def topbottom_block(df, dates, n=5, latest_names=True):
+    """YTD 증감 상/하위 표 (45~59행): 팀별 상위 n·하위 n.
+
+    latest_names: 코드로 묶고 기준일 시점 최신 펀드명으로 표시 (개명 반영).
+      False면 엑셀 원본처럼 코드 최초 등장 이름 — verify.py 재현용.
+    """
+    names = latest_fund_names(df, dates["current"]) if latest_names else None
     res = {}
     for team in TEAMS:
-        g = pivot_fund_diff(df, team, dates["ye25"], dates["current"])
+        if names is None:
+            g = pivot_fund_diff(df, team, dates["ye25"], dates["current"])
+        else:
+            g = pivot_fund_diff(df, team, dates["ye25"], dates["current"],
+                                by="최종모펀드코드")
+            g.index = g.index.map(names)
+            g = g.sort_index()  # 이름 가나다순 (동률 시 순서 기준)
         g = g[g["diff"].notna()]
         top = g.sort_values("diff", ascending=False, kind="stable").head(n)
         bot = g.sort_values("diff", ascending=True, kind="stable").head(n)
